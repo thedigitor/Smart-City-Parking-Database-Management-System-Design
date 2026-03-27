@@ -121,3 +121,42 @@ GROUP BY PL.LotName,PSESS.PaymentStatus
 HAVING PSESS.PaymentStatus ='Paid'
 ORDER BY TotalRevenue;
 ```
+## Key Features of the System
+* Automated parking fee calculation
+* Real-time tracking of parking occupancy
+* Customer and vehicle management
+* Membership-based discount system
+* Payment tracking and status monitoring
+
+## Use Cases
+* A customer registers and adds multiple vehicles
+* A vehicle enters a parking space and starts a session
+* System records entry time and assigns space
+* On exit, system calculates total hours and fee
+* Customer makes payment and status is updated
+* Membership discounts are applied automatically
+
+## Business Value
+* This system helps CityPark to:
+* Reduce manual errors
+* Improve operational efficiency
+* Track customer behavior
+* Increase revenue through better pricing insights
+* Enable future analytics and reporting
+
+## Future Improvements
+1. Integration with mobile apps for real-time booking
+2. Dashboard for analytics and reporting
+3. Dynamic pricing based on demand
+4. License plate recognition system
+5. Add a Notification entity to track SMS/email alerts sent to customers for unpaid sessions or expiring memberships.
+6. Implement database triggers to automatically update ParkingSpace.is_occupied when a ParkingSession is created or closed.
+7. Add stored procedures for common operations (StartSession, EndSession, ProcessPayment) to encapsulate business logic at the database level.
+8. Create views (e.g., vw_AvailableSpaces, vw_ActiveSessions) to simplify reporting queries for application developers.
+9. Add an AuditLog table to track all data modifications for compliance and debugging purposes.
+
+## Conclusion
+The Smart City Parking Management System provides a scalable and efficient solution to modern parking challenges. By structuring the data into a normalized relational database, the system ensures accuracy, flexibility, and readiness for future enhancements such as analytics dashboards and real-time applications.
+
+
+
