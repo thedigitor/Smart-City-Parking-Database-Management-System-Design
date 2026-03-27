@@ -26,7 +26,6 @@ This project introduces a structured relational database system that automates p
 |------|--------|
 |Project Title  |  Smart City Parking Database Management System|
 |Database Type |  Relational Database (SQL)|
-|Normalization Level  |  Third Normal Form (3NF)|
 |Total Entities |   8 Core Entities|
 |Total Relationships  |9 Foreign Key Relationships|
 |Deliverables  |   ERD, DDL Scripts, DML Scripts, Business Rules, Use Cases|
