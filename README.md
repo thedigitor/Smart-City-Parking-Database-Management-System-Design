@@ -120,6 +120,8 @@ FROM ParkingLot PL
 	ON PL.ParkingLotID = PS.ParkingLotID
 GROUP BY PL.ParkingLotID, PL.LotName,PL.CityZone;
 ```
+<img width="384" height="172" alt="27 03 2026_00 44 00_REC_1" src="https://github.com/user-attachments/assets/51e63aca-2a68-4cbb-a309-2c1ef5b32c3a" />
+
 #### Query 2: Revenue by Lot
 
 ```sql
@@ -137,6 +139,8 @@ GROUP BY PL.LotName,PSESS.PaymentStatus
 HAVING PSESS.PaymentStatus ='Paid'
 ORDER BY TotalRevenue;
 ```
+<img width="425" height="135" alt="27 03 2026_01 31 24_REC_1" src="https://github.com/user-attachments/assets/cc3d02ff-e4c4-4580-bbff-bdc877447909" />
+
 ## Key Features of the Database System
 * Automated parking fee calculation
 * Real-time tracking of parking occupancy
