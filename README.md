@@ -156,7 +156,7 @@ ORDER BY TotalRevenue;
 * Membership discounts are applied automatically
 
 ## Business Value
-* This system helps CityPark to:
+This system helps CityPark to:
 * Reduce manual errors
 * Improve operational efficiency
 * Track customer behavior
