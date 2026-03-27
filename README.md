@@ -74,17 +74,17 @@ The database enforces data integrity using:
 ##DDL (Database Definition Language)
 The following DDL scripts define the database structure including tables, constraints, primary keys and foreign keys.
 
-[You can access the script here](
+[You can access the script here](https://github.com/thedigitor/Smart-City-Parking-Database-Management-System-Design/commit/d0e7599d8163d4dd53dd1ef60a339532b67258ba)
 
 ## DML (Data Manipulation Language)
 The following sample data was inserted into each major table to validate the database design, test relationships, and demonstrate realistic operations. All data is fictitious but realistic.
 
-[You can access the script here](
+[You can access the script here](https://github.com/thedigitor/Smart-City-Parking-Database-Management-System-Design/commit/a0bf472913dd142939edea321373ff6ccf2dc599)
 
 ## ERD (Entity Relationship Diagram)
 The Entity Relationship Diagram (ERD) was constructed to visually represent all 8 entities, their attributes, primary keys, foreign keys, and the cardinality of each relationship. 
 
-[You can view the ERD here](
+[You can view the ERD here](https://github.com/thedigitor/Smart-City-Parking-Database-Management-System-Design/commit/025f794e775ad7d4023e65d309e26616870eb866)
 
 ## Key Analytical SQL Queries
 The following SQL queries demonstrate the analytical capabilities enabled by this database design. These support CityPark's operational reporting needs.
@@ -154,9 +154,5 @@ ORDER BY TotalRevenue;
 7. Add stored procedures for common operations (StartSession, EndSession, ProcessPayment) to encapsulate business logic at the database level.
 8. Create views (e.g., vw_AvailableSpaces, vw_ActiveSessions) to simplify reporting queries for application developers.
 9. Add an AuditLog table to track all data modifications for compliance and debugging purposes.
-
-## Conclusion
-The Smart City Parking Management System provides a scalable and efficient solution to modern parking challenges. By structuring the data into a normalized relational database, the system ensures accuracy, flexibility, and readiness for future enhancements such as analytics dashboards and real-time applications.
-
 
 
