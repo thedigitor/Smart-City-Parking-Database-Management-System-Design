@@ -1,0 +1,95 @@
+/*This is an SQL DATABASE MANAGEMENT SYSTEM DESIGN PROJECT
+for SMART CITY PARKING MANAGEMENT SYSTEM
+
+DATABASE INSERTION*/
+
+USE SmartCityParkingManagementSystem
+GO
+
+--INSERT DATA INTO CUSTOMER TABLE
+INSERT INTO Customer (FirstName, LastName, Email, PhoneNumber, CreatedAt)
+VALUES
+('John', 'Doe', 'john.doe@email.com', '08011111111', '2026-02-01 08:00:00'),
+('Mary', 'Johnson', 'mary.j@email.com', '08022222222', '2026-02-02 09:00:00'),
+('David', 'Brown', 'david.b@email.com', '08033333333', '2026-02-03 10:00:00'),
+('Sarah', 'Wilson', 'sarah.w@email.com', '08044444444', '2026-02-04 11:00:00'),
+('Michael', 'Taylor', 'michael.t@email.com', '08055555555', '2026-02-05 12:00:00');
+
+SELECT *FROM Customer
+
+--INSERT DATA INTO VEHICLE TABLE
+INSERT INTO Vehicle (CustomerID, LicensePlate, VehicleMake, VehicleModel, VehicleColor, VehicleType, CreatedAT)
+VALUES
+(1, 'ABC123', 'Toyota', 'Corolla', 'Black', 'Sedan', '2026-02-01 08:30:00'),
+(2, 'DEF456', 'Honda', 'Civic', 'White', 'Sedan', '2026-02-02 09:30:00'),
+(3, 'GHI789', 'Ford', 'Explorer', 'Blue', 'SUV', '2026-02-03 10:30:00'),
+(4, 'JKL012', 'Tesla', 'Model 3', 'Red', 'Electric', '2026-02-04 11:30:00'),
+(5, 'MNO345', 'BMW', 'X5', 'Grey', 'SUV', '2026-02-05 12:30:00');
+
+SELECT *FROM Vehicle
+
+--INSERT DATA INTO PARKINGLOT TABLE
+INSERT INTO ParkingLot (LotName, Address, CityZone, TotalSpaces, HourlyRate, CreatedAT)
+VALUES
+('Central Mall Lot', '12 Main Street', 'Zone A', 100, 5.00, '2026-01-01 07:00:00'),
+('Airport Parking', 'Airport Road', 'Zone B', 200, 10.00, '2026-01-02 07:00:00'),
+('City Plaza Lot', '45 Plaza Ave', 'Zone A', 150, 6.00, '2026-01-03 07:00:00'),
+('Tech Park Lot', '78 Silicon Street', 'Zone C', 120, 8.00, '2026-01-04 07:00:00'),
+('Hospital Parking', '99 Health Blvd', 'Zone D', 80, 4.00, '2026-01-05 07:00:00');
+
+SELECT *FROM ParkingLot
+
+--INSERT DATA INTO PARKINGSPACE TABLE
+INSERT INTO ParkingSpace (ParkingLotID, SpaceNumber, FloorLevel, SpaceType, IsOccupied, CreatedAT)
+VALUES
+(1, 'A1', 1, 'Regular', 1, '2026-02-01 08:45:00'),
+(2, 'B1', 1, 'Compact', 1, '2026-02-02 09:45:00'),
+(3, 'C1', 2, 'Regular', 1, '2026-02-03 10:45:00'),
+(4, 'D1', 2, 'Handicap', 1, '2026-02-04 11:45:00'),
+(5, 'E1', 1, 'Electric Vehicle', 1, '2026-02-05 12:45:00');
+
+SELECT *FROM ParkingSpace
+
+--INSERT DATA INTO PARKINGSESSION TABLE
+INSERT INTO ParkingSession (CustomerID, VehicleID, ParkingSpaceID, EntryTime, Exittime, TotalHours, TotalFee, PaymentStatus, CreatedAT)
+VALUES
+(1, 1, 1, '2026-02-01 08:50:00', '2026-02-01 10:50:00', '2:00:00', 10.00, 'Paid', '2026-02-01 08:50:00'),
+(2, 2, 2, '2026-02-02 09:50:00', '2026-02-02 12:50:00', '3:00:00', 30.00, 'Paid', '2026-02-02 09:50:00'),
+(3, 3, 3, '2026-02-03 10:50:00', '2026-02-03 12:50:00', '2:00:00', 12.00, 'Pending', '2026-02-03 10:50:00'),
+(4, 4, 4, '2026-02-04 11:50:00', '2026-02-04 13:50:00', '2:00:00', 16.00, 'Unpaid', '2026-02-04 11:50:00'),
+(5, 5, 5, '2026-02-05 12:50:00', '2026-02-05 14:50:00', '2:00:00', 8.00, 'Paid', '2026-02-05 12:50:00');
+
+SELECT *FROM ParkingSession
+
+--INSERT DATA INTO MEMBERSHIPPLAN TABLE
+INSERT INTO MembershipPlan (CustomerID, MembershipPlanName, Price, DurationMonth, DiscountRate, CreatedAT)
+VALUES
+(1, 'Silver Plan', 100.00, 3, 5, '2026-02-01 07:00:00'),
+(2, 'Gold Plan', 200.00, 6, 10, '2026-02-02 07:00:00'),
+(3, 'Platinum Plan', 300.00, 6, 10, '2026-02-03 07:00:00'),
+(4, 'Silver Plan', 100.00, 3, 5, '2026-02-04 07:00:00'),
+(5, 'Gold Plan', 200.00, 6, 10, '2026-02-05 07:00:00');
+
+SELECT *FROM MembershipPlan
+
+--INSERT DATA INTO PAYMENT TABLE
+INSERT INTO Payment (ParkingSessionID, PaymentDate, Amount, PaymentMethod, PaymentStatus, CreatedAT)
+VALUES
+(1, '2026-02-01 10:55:00', 10.00, 'Cash', 'Success', '2026-02-01 10:55:00'),
+(2, '2026-02-02 12:55:00', 30.00, 'Cash', 'Success', '2026-02-02 12:55:00'),
+(3, '2026-02-03 12:55:00', 12.00, 'Transfer', 'Failed', '2026-02-03 12:55:00'),
+(4, '2026-02-04 13:55:00', 16.00, 'Transfer', 'Failed', '2026-02-04 13:55:00'),
+(5, '2026-02-05 14:55:00', 8.00, 'Cash', 'Success', '2026-02-05 14:55:00');
+
+SELECT *FROM Payment
+
+--INSERT DATA INTO CUSTOMERMEMBERSHIP TABLE
+INSERT INTO CustomerMembership (CustomerID, MembershipPlanID, StartDate, EndDate, IsActive, CreatedAT)
+VALUES
+(1, 1, '2026-02-01', '2026-05-01', 1, '2026-02-01 07:10:00'),
+(2, 2, '2026-02-02', '2026-08-02', 1, '2026-02-02 07:10:00'),
+(3, 3, '2026-02-03', '2027-02-03', 1, '2026-02-03 07:10:00'),
+(4, 4, '2026-02-04', '2026-05-04', 1, '2026-02-04 07:10:00'),
+(5, 5, '2026-02-05', '2026-08-05', 1, '2026-02-05 07:10:00');
+
+SELECT *FROM CustomerMembership
