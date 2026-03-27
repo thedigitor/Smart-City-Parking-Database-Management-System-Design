@@ -2,7 +2,7 @@
 ## Improving Operational Efficiency in CityPark’s Current Manual Parking System with a Scalable Data Solution
 ### SQL Database Design Project Report
 
-Table of Content
+#Table of Content
 * [Project Overview](#project-overview)
 * [Business Context](#business-context)
 * [Database Entities & Attributes](#database-entities--attributes)
