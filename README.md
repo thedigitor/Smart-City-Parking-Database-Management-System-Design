@@ -34,3 +34,32 @@ The database management system was designed to:
 * Automatically calculate parking fees
 * Support membership plans with discounts
 * Provide structured data for reporting and analytics
+
+## Database Entities & Attributes
+The Smart City Parking Management System database is built around 8 core entities. Each entity was designed to capture a distinct real-world concept in the parking workflow: from the customer registering through to payment and membership benefits.
+
+1. Customer: Individual using parking services 
+2. Vehicle: Vehicle owned by a customer 
+3. ParkingLot: Physical parking location 
+4. ParkingSpace: Individual parking space inside a lot 
+5. ParkingSession: One instance of parking (entry → exit) 
+6. MembershipPlan: Subscription plans offered 
+7. Payment: Payment made for a parking session 
+8. CustomerMembership: Links customers to membership plans
+
+These entities represent the full parking lifecycle from registration to payment and membership benefits.
+
+## Entity Relationships & Cardinalities
+The following table describes every relationship in the database, including cardinality, the foreign key column, and the business rule it enforces.
+
+|Relationship  | Type | Business Rule|
+|--------|------|------|
+|Customer → Vehicle  | One-to-Many (1:M)  |   One customer can own many vehicles; every vehicle must have an owner|
+|ParkingLot → ParkingSpace |  One-to-Many (1:M)   |  One lot contains many spaces; every space belongs to exactly one lot|
+|Customer → ParkingSession | One-to-Many (1:M) |  One customer can have many sessions; every session must link to a customer|
+|Vehicle → ParkingSession |   One-to-Many (1:M) |  One vehicle can appear in many sessions; every session must identify the vehicle|
+|ParkingSpace → ParkingSession  |  One-to-Many (1:M)  | One space can be used in many sessions (at different times)|
+|Customer → MembershipPlan |  One-to-Many (1:M) |  A customer can subscribe to different plans; a plan must belong to one customer|
+|ParkingSession → Payment| One-to-Many (1:M)  |One session can have one or more payment records|
+|Customer → CustomerMembership  | One-to-Many (1:M)  | One customer can hold multiple memberships over time|
+|MembershipPlan → CustomerMembership  |  One-to-Many (1:M) |  One plan can be subscribed to by many customers|
