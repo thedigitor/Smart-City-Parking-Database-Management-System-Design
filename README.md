@@ -1,6 +1,10 @@
 # Smart City Parking Database Management System Design
 ## Improving Operational Efficiency in CityPark’s Current Manual Parking System with a Scalable Data Solution
 ### SQL Database Design Project Report
+
+Table of Content
+* [Project Overview](#project-overview)
+
 ## Project Overview
 The Smart City Parking Database Management System was designed to solve inefficiencies in CityPark’s current manual parking system. The existing paper-based approach made it difficult to track parking availability, calculate fees accurately, and analyze customer behavior.
 
@@ -64,24 +68,24 @@ The following table describes every relationship in the database, including card
 |Customer → CustomerMembership  | One-to-Many (1:M)  | One customer can hold multiple memberships over time|
 |MembershipPlan → CustomerMembership  |  One-to-Many (1:M) |  One plan can be subscribed to by many customers|
 
-## Constraints and Keys
+## Constraints & Keys
 The database enforces data integrity using:
 1. Primary Keys (PK) for unique identification
 2. Foreign Keys (FK) to maintain relationships
 3. NOT NULL constraints for required fields
 4. UNIQUE constraints (e.g., Email, LicensePlate)
 
-##DDL (Database Definition Language)
+## Data Definition Language
 The following DDL scripts define the database structure including tables, constraints, primary keys and foreign keys.
 
 [You can access the script here](https://github.com/thedigitor/Smart-City-Parking-Database-Management-System-Design/commit/d0e7599d8163d4dd53dd1ef60a339532b67258ba)
 
-## DML (Data Manipulation Language)
+## Data Manipulation Language
 The following sample data was inserted into each major table to validate the database design, test relationships, and demonstrate realistic operations. All data is fictitious but realistic.
 
 [You can access the script here](https://github.com/thedigitor/Smart-City-Parking-Database-Management-System-Design/commit/a0bf472913dd142939edea321373ff6ccf2dc599)
 
-## ERD (Entity Relationship Diagram)
+## Entity Relationship Diagram
 The Entity Relationship Diagram (ERD) was constructed to visually represent all 8 entities, their attributes, primary keys, foreign keys, and the cardinality of each relationship. 
 
 [You can view the ERD here](https://github.com/thedigitor/Smart-City-Parking-Database-Management-System-Design/commit/025f794e775ad7d4023e65d309e26616870eb866)
@@ -121,7 +125,7 @@ GROUP BY PL.LotName,PSESS.PaymentStatus
 HAVING PSESS.PaymentStatus ='Paid'
 ORDER BY TotalRevenue;
 ```
-## Key Features of the System
+## Key Features of the Database System
 * Automated parking fee calculation
 * Real-time tracking of parking occupancy
 * Customer and vehicle management
