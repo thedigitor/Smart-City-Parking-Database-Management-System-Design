@@ -63,3 +63,59 @@ The following table describes every relationship in the database, including card
 |ParkingSession → Payment| One-to-Many (1:M)  |One session can have one or more payment records|
 |Customer → CustomerMembership  | One-to-Many (1:M)  | One customer can hold multiple memberships over time|
 |MembershipPlan → CustomerMembership  |  One-to-Many (1:M) |  One plan can be subscribed to by many customers|
+
+## Constraints and Keys
+The database enforces data integrity using:
+1. Primary Keys (PK) for unique identification
+2. Foreign Keys (FK) to maintain relationships
+3. NOT NULL constraints for required fields
+4. UNIQUE constraints (e.g., Email, LicensePlate)
+
+##DDL (Database Definition Language)
+The following DDL scripts define the database structure including tables, constraints, primary keys and foreign keys.
+
+You can access the script here
+
+## DML (Data Manipulation Language)
+The following sample data was inserted into each major table to validate the database design, test relationships, and demonstrate realistic operations. All data is fictitious but realistic.
+
+You can access the script here
+
+## ERD (Entity Relationship Diagram)
+The Entity Relationship Diagram (ERD) was constructed to visually represent all 8 entities, their attributes, primary keys, foreign keys, and the cardinality of each relationship. 
+
+You can view the ERD here
+
+## Key Analytical SQL Queries
+The following SQL queries demonstrate the analytical capabilities enabled by this database design. These support CityPark's operational reporting needs.
+
+--Query 1: Current Space Availability by Lot
+
+SELECT
+	PL.LotName,
+	PL.CityZone,
+	COUNT 
+		(CASE WHEN PS.IsOccupied = 1 
+		THEN 1 END) AS AvailableSpaces,
+	COUNT (*) AS TotalSpaces
+FROM ParkingLot PL
+	JOIN ParkingSpace PS
+	ON PL.ParkingLotID = PS.ParkingLotID
+GROUP BY PL.ParkingLotID, PL.LotName,PL.CityZone;
+
+--Query 2: Revenue by Lot
+
+SELECT 
+	PL.LotName,
+	SUM (PSESS.TotalFee) AS TotalRevenue,
+	COUNT (PSESS.ParkingSessionID) AS TotalSession,
+	PSESS.PaymentStatus
+FROM ParkingSession PSESS
+	JOIN ParkingSpace PS
+	ON PSESS.ParkingSpaceID = PS.ParkingSpaceID
+	JOIN ParkingLot PL 
+	ON PS.ParkingLotID = PL.ParkingLotID
+GROUP BY PL.LotName,PSESS.PaymentStatus
+HAVING PSESS.PaymentStatus ='Paid'
+ORDER BY TotalRevenue;
+
