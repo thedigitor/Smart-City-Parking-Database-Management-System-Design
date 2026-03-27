@@ -4,6 +4,18 @@
 
 Table of Content
 * [Project Overview](#project-overview)
+* [Business Context](#business-context)
+* [Database Entities & Attributes](#database-entities--attributes)
+* [Entity Relationship & Cardinalities](#entity-relationship--cardinalities)
+* [Constraints & Keys](#constraints--keys)
+* [Data Definition Language](#data-definition-language)
+* [Data Manipulation Language](#data-manipulation-language)
+* [Entity Relationship Diagram](#entity-relationship-diagram)
+* [Key Analytical SQL Queries](#key-analytical-sql-queries)
+* [Key Features of the Database System](#key-features-of-the-database-system)
+* [Use Cases](#use-cases)
+* [Business Value](#business-value)
+* [Future Improvements](#future-improvements)
 
 ## Project Overview
 The Smart City Parking Database Management System was designed to solve inefficiencies in CityPark’s current manual parking system. The existing paper-based approach made it difficult to track parking availability, calculate fees accurately, and analyze customer behavior.
