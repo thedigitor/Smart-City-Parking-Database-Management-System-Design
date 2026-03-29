@@ -1,4 +1,4 @@
-# Smart City Parking Database Management System Design
+# Smart City Parking Database Management System Design Using SQL
 ## Improving Operational Efficiency in CityPark’s Current Manual Parking System with a Scalable Data Solution
 ### SQL Database Design Project Report
 
